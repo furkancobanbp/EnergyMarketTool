@@ -22,6 +22,15 @@ namespace WPFTutorial.Functions
                 return contex.tblPiyasaFiyatlari.FromSqlRaw(Sql).ToList();
             }
         }
+        public List<clsDgpTalimatOzet> dgpOzetCek(DateTime basTar, DateTime bitTar)
+        {
+            String baslangicTarihi = basTar.ToString("dd-MM-yyyy 00:00:00");
+            String bitisTarihi = bitTar.ToString("dd-MM-yyyy 23:59:00");            using (var contex = new context())
+            {
+                var Sql = "Select * from \"tblDgpOzet\" where \"Tarih\" between '" + baslangicTarihi + "' and '" + bitisTarihi + "'";
+                return contex.tblDgpOzet.FromSqlRaw(Sql).ToList();
+            }
+        }
         
     }
 }

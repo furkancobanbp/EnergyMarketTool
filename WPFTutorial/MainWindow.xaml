@@ -378,8 +378,9 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="41*"/>
-            <RowDefinition Height="55*"/>
+            <RowDefinition Height="149*"/>
+            <RowDefinition Height="155*"/>
+            <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -405,6 +406,31 @@
                 <DataGridTextColumn Header="Sistem Yönü" Binding= "{Binding SistemYonu}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="btnDgpDurum" Style="{DynamicResource rounded}" Content="DGP Durum Çek" 
+            HorizontalAlignment="Center" Margin="0,13,0,0" 
+            VerticalAlignment="Top" Width="140" Height="30" 
+            BorderBrush="#7C4DFF" Background="#9C27B0" Foreground="#FFFFFF" Click="btnDGPDurum_click" Grid.Row="1"/>
+        <DataGrid x:Name="Grid2" Grid.Column="1" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="Auto" AutoGenerateColumns="False" Margin="0,5,0,5" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Tarih" IsReadOnly="True"  Width="*" Binding= "{Binding Tarih, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}"/>
+                <DataGridTextColumn Header="Net Hacim" IsReadOnly="True"  Width="*" Binding= "{Binding NetHacim}"/>
+                <DataGridTextColumn Header="YAL0" IsReadOnly="True"  Width="*"  Binding= "{Binding YAL0}"/>
+                <DataGridTextColumn Header="YAL1" IsReadOnly="True"  Width="*" Binding= "{Binding YAL1}"/>
+                <DataGridTextColumn Header="YAL2" IsReadOnly="True"  Width="*" Binding= "{Binding YAL2}"/>
+                <DataGridTextColumn Header="YAT0" IsReadOnly="True"  Width="*" Binding= "{Binding YAT0}"/>
+                <DataGridTextColumn Header="YAT1" IsReadOnly="True"  Width="*" Binding= "{Binding YAT1}"/>
+                <DataGridTextColumn Header="YAT2" IsReadOnly="True"  Width="*" Binding= "{Binding YAT2}"/>
+                <DataGridTextColumn Header="Teslim Edilen YAL" IsReadOnly="True"  Width="*" Binding= "{Binding TeslimEdilenYAL}"/>
+                <DataGridTextColumn Header="Teslim Edilen YAT" IsReadOnly="True"  Width="*" Binding= "{Binding TeslimEdilenYAT}"/>
+                <DataGridTextColumn Header="Sonraki Saat" IsReadOnly="True"  Width="*" Binding= "{Binding SonrakiSaat, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}"/>
+                <DataGridTextColumn Header="Sistem Yönü" IsReadOnly="True"  Width="*" Binding= "{Binding SistemYonu}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnDGPDurumListele" Style="{DynamicResource rounded}" Content="DGP Durum Listele" Click="btnDGPDurum_Listele" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" Width="140" Height="30" 
+            BorderBrush="#7C4DFF" Background="#9C27B0" Foreground="#FFFFFF" Margin="0,48,0,0" Grid.Row="1"/>
 
     </Grid>
 </Window>

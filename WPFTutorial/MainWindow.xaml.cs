@@ -67,5 +67,15 @@ namespace WPFTutorial
                 MessageBox.Show("İşlem Tamamlandı");
             }
         }
+
+        private void btnDGPDurum_click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnDGPDurum_Listele(object sender, RoutedEventArgs e)
+        {
+            Grid2.ItemsSource = query.dgpOzetCek(BasTar.SelectedDate.Value, BitTar.SelectedDate.Value);
+        }
     }
 }
