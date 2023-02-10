@@ -398,19 +398,19 @@
             HorizontalAlignment="Center" Margin="0,109,0,0" 
             VerticalAlignment="Top" Width="140" Height="31" 
             BorderBrush="#7C4DFF" Background="#9C27B0" Foreground="#FFFFFF" Click="btnPtfSmfCek_Copy_Click"/>
-        <DataGrid Name ="Grid1"  Grid.Column="1" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="Auto" AutoGenerateColumns="False">
+        <DataGrid Name ="Grid1"  Grid.Column="1" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="Auto" AutoGenerateColumns="False" ClipboardCopyMode="IncludeHeader">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Tarih" Binding= "{Binding Tarih, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}" Width="*"/>
-                <DataGridTextColumn Header="PTF" Binding= "{Binding PTF}" Width="*"/>
-                <DataGridTextColumn Header="SMF" Binding= "{Binding SMF}" Width="*"/>
-                <DataGridTextColumn Header="Sistem Yönü" Binding= "{Binding SistemYonu}" Width="*"/>
+                <DataGridTextColumn Header="Tarih" IsReadOnly="True" Binding= "{Binding Tarih, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}" Width="*"/>
+                <DataGridTextColumn Header="PTF" IsReadOnly="True" Binding= "{Binding PTF}" Width="*"/>
+                <DataGridTextColumn Header="SMF" IsReadOnly="True" Binding= "{Binding SMF}" Width="*"/>
+                <DataGridTextColumn Header="Sistem Yönü" IsReadOnly="True" Binding= "{Binding SistemYonu}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnDgpDurum" Style="{DynamicResource rounded}" Content="DGP Durum Çek" 
             HorizontalAlignment="Center" Margin="0,13,0,0" 
             VerticalAlignment="Top" Width="140" Height="30" 
             BorderBrush="#7C4DFF" Background="#9C27B0" Foreground="#FFFFFF" Click="btnDGPDurum_click" Grid.Row="1"/>
-        <DataGrid x:Name="Grid2" Grid.Column="1" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="Auto" AutoGenerateColumns="False" Margin="0,5,0,5" Grid.Row="1">
+        <DataGrid x:Name="Grid2" Grid.Column="1" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="Auto" AutoGenerateColumns="False" Margin="0,5,0,5" Grid.Row="1" ClipboardCopyMode="IncludeHeader">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Tarih" IsReadOnly="True"  Width="*" Binding= "{Binding Tarih, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}"/>
                 <DataGridTextColumn Header="Net Hacim" IsReadOnly="True"  Width="*" Binding= "{Binding NetHacim}"/>

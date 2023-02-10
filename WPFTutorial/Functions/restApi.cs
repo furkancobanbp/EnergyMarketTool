@@ -126,27 +126,7 @@ namespace WPFTutorial.Functions
                 model.SistemYonu = "Belirlenmedi";
             }
             return model;
-        }
-        public clsDgpTalimatOzet translateToTurkishDgp(clsDgpTalimatOzet model)
-        {
-            if (model.SistemYonu == "ENERGY_DEFICIT")
-            {
-                model.SistemYonu = "YAL";
-            }
-            else if (model.SistemYonu == "IN_BALANCE")
-            {
-                model.SistemYonu = "DENGEDE";
-            }
-            else if (model.SistemYonu == "ENERGY_SURPLUS")
-            {
-                model.SistemYonu = "YAT";
-            }
-            else
-            {
-                model.SistemYonu = "Belirlenmedi";
-            }
-            return model;
-        }
+        }     
 
     }
 }

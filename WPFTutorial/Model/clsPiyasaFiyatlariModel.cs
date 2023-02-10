@@ -10,7 +10,7 @@ using WPFTutorial;
 namespace jsonParser.Model
 {
     [PrimaryKey(nameof(Tarih))]
-    public class clsPiyasaFiyatlariModel:SistemYonu
+    public class clsPiyasaFiyatlariModel : SistemYonu
     {
         [JsonProperty("date")]
         public DateTime Tarih { get; set; }
