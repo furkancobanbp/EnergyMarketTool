@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPFTutorial;
 
 namespace jsonParser.Model
 {
     [PrimaryKey(nameof(Tarih))]
-    public class clsPiyasaFiyatlariModel
+    public class clsPiyasaFiyatlariModel:SistemYonu
     {
         [JsonProperty("date")]
         public DateTime Tarih { get; set; }

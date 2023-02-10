@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WPFTutorial.Functions
-{
+{    
     public class restApi
     {
         public String Url = "https://api.epias.com.tr/epias/exchange/transparency";
@@ -107,7 +107,7 @@ namespace WPFTutorial.Functions
             var jsonModel = JsonConvert.DeserializeObject<List<clsGrf>>(body);
             return jsonModel;
         }
-        public clsPiyasaFiyatlariModel translateToTurkish(clsPiyasaFiyatlariModel model)
+        public object translateToTurkish(SistemYonu model)
         {
             if (model.SistemYonu == "ENERGY_DEFICIT")
             {
@@ -118,6 +118,26 @@ namespace WPFTutorial.Functions
                 model.SistemYonu = "DENGEDE";
             }
             else if(model.SistemYonu == "ENERGY_SURPLUS")
+            {
+                model.SistemYonu = "YAT";
+            }
+            else
+            {
+                model.SistemYonu = "Belirlenmedi";
+            }
+            return model;
+        }
+        public clsDgpTalimatOzet translateToTurkishDgp(clsDgpTalimatOzet model)
+        {
+            if (model.SistemYonu == "ENERGY_DEFICIT")
+            {
+                model.SistemYonu = "YAL";
+            }
+            else if (model.SistemYonu == "IN_BALANCE")
+            {
+                model.SistemYonu = "DENGEDE";
+            }
+            else if (model.SistemYonu == "ENERGY_SURPLUS")
             {
                 model.SistemYonu = "YAT";
             }
